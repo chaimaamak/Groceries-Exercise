@@ -1,6 +1,11 @@
 # groceries.py
 
-#from pprint import pprint
+from pprint import pprint
+
+def to_usd(my_price):
+    return "${0:,.2f}".format(my+price)
+
+# from pprint import pprint
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -34,6 +39,16 @@ products_count = len(products)
 #>"one string"+"another string"
 
 print("-----------")
-#print("THERE ARE" + str(products_count) + "PRODUCTS:")
+# print("THERE ARE" + str(products_count) + "PRODUCTS:")
 print(f"THERE ARE {products_count} PRODUCTS:")
 print("-----------")
+
+# todo: sort items
+
+for item in products:
+    #print(type(item))
+    #print(item["name"])
+
+    price_usd = to_usd(item['price'])
+    print(f"{item['name']} ... {price_usd}")
+  
