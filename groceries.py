@@ -38,6 +38,8 @@ products_count = len(products)
 
 #>"one string"+"another string"
 
+# Products (Part 1s)
+
 print("-----------")
 # print("THERE ARE" + str(products_count) + "PRODUCTS:")
 print(f"THERE ARE {products_count} PRODUCTS:")
@@ -57,5 +59,23 @@ for item in sorted_products:
 
     price_usd = to_usd(item['price'])
     print("  + " f"{item['name']} ({price_usd})")
-  
-breakpoint ()
+
+# Departments (Part 2)
+
+departments = []
+for item in products:
+#    if item["department"] not in departments:
+        departments.append(item["department"])
+
+unique_departments = list(set(departments))
+
+departments_count = len(unique_departments)
+
+
+print("-----------")
+print(f"THERE ARE {departments_count} DEPARTMENTS:")
+print("-----------")
+
+for d in unique_departments:
+    print(d)
+
