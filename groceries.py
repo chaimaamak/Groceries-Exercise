@@ -3,7 +3,7 @@
 from pprint import pprint
 
 def to_usd(my_price):
-    return "${0:,.2f}".format(my+price)
+    return "${0:,.2f}".format(my_price)
 
 # from pprint import pprint
 
@@ -43,12 +43,19 @@ print("-----------")
 print(f"THERE ARE {products_count} PRODUCTS:")
 print("-----------")
 
+def sort_by_name(any_product):
+    return any_product["name"]
+
+sorted_products = sorted(products, key=sort_by_name)
+
+
 # todo: sort items
 
-for item in products:
+for item in sorted_products:
     #print(type(item))
     #print(item["name"])
 
     price_usd = to_usd(item['price'])
-    print(f"{item['name']} ... {price_usd}")
+    print("  + " f"{item['name']} ({price_usd})")
   
+breakpoint ()
