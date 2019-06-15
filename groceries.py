@@ -76,6 +76,8 @@ print("-----------")
 print(f"THERE ARE {departments_count} DEPARTMENTS:")
 print("-----------")
 
+unique_departments.sort()
+
 for d in unique_departments:
-    print(d)
+    print(d.title())
 
